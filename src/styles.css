@@ -1,0 +1,160 @@
+/* Add application styles & imports to this file! */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+mat-drawer-container {
+  height: 100%;
+}
+
+mat-drawer,
+mat-drawer-content {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+mat-drawer-content {
+  transition-property: transform, margin-left, margin-right;
+}
+
+mat-drawer {
+  background-color: white;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  transition-property: width;
+}
+
+.btn-primary {
+  background-color: orangered;
+  border-color: red;
+}
+.btn-outline-primary {
+  color: orangered;
+  border-color: orangered;
+}
+body {
+  background-color: #eef5f9;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.btn {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+h1 {
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.replay .card {
+  margin: 3em;
+  padding: 30px;
+}
+
+.head-card {
+  background-color: #00aea4;
+}
+
+.temario {
+  margin-left: 3em;
+}
+
+.temario .card {
+  margin: 10px 0px 10px 30px;
+}
+
+.card-term-title {
+  font-weight: bold;
+}
+
+.card-term-body {
+  text-align: center;
+  padding: 15px;
+}
+
+canvas {
+  height: 3em !important;
+  width: auto !important;
+}
+
+.body-div {
+  margin-left: 3em;
+}
+
+.return {
+  margin: 1.5em 3em;
+}
+
+mat-selection-list {
+  max-height: 600px;
+  overflow: auto;
+}
+
+.card.list {
+  margin-left: 3em;
+}
+
+.card.termCard {
+  max-height: 100px;
+}
+
+.iconsGroup {
+  position: absolute;
+  top: 15px;
+  right: 40px;
+  width: auto;
+  float: right;
+  z-index: 999;
+}
+.iconsGroup svg {
+  margin: 0 8px;
+  width: 50px;
+  height: auto;
+  color: white;
+}
+
+.list-num {
+  font-weight: bold;
+  padding-left: 2em;
+  float: left;
+}
+
+.list-label {
+  min-width: 80%;
+}
+
+.list-ico {
+  float: right;
+  padding-right: 1em;
+}
+
+.list-ico.seen {
+  font-weight: bold;
+}
+
+.button-selected {
+  background-color: orangered;
+  color: white;
+}
+
+.button-not-selected {
+  background-color: white;
+  color: black;
+}

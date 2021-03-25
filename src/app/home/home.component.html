@@ -1,0 +1,92 @@
+<div class="replay">
+  <div class="card">
+    <h3>Vuelve donde lo dejaste</h3>
+    <div>
+      2º Trimestre - Sesión 25, Ordinales, Fracciones y Decimales
+    </div>
+    <div class="row">
+      <button type="button" class="btn btn-primary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="auto"
+          fill="currentColor"
+          class="bi bi-play-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"
+          />
+        </svg>
+        <span>Reproducción Ordenada</span>
+      </button>
+
+      <button type="button" class="btn btn-outline-primary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="auto"
+          fill="currentColor"
+          class="bi bi-shuffle"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"
+          />
+          <path
+            d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"
+          />
+        </svg>
+        <span style="margin-left:10px">Aleatorio</span>
+      </button>
+
+      <button type="button" class="btn btn-outline-primary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="auto"
+          fill="currentColor"
+          class="bi bi-reply"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M6.598 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.74 8.74 0 0 0-1.921-.306 7.404 7.404 0 0 0-.798.008h-.013l-.005.001h-.001L7.3 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L2.614 8.254a.503.503 0 0 0-.042-.028.147.147 0 0 1 0-.252.499.499 0 0 0 .042-.028l3.984-2.933zM7.8 10.386c.068 0 .143.003.223.006.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96v-.667z"
+          />
+        </svg>
+        <span style="margin-left:10px">Siguiente Sesión</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="temario">
+  <h2>Temario</h2>
+  <div class="row">
+    <div class="row" *ngFor="let term of progress">
+      <div class="col-lg-12">
+        <div class="card">
+          <div
+            class="card-body"
+            [attr.id]="term.id"
+            (click)="onSelectTerm(term.id)"
+          >
+            <div class="card-term-title">{{ term.name }}</div>
+            <div class="row">
+              <div class="card-term-body">
+                {{ term.value }}/{{ term.valueMax }} sesiones
+              </div>
+              <canvas
+                baseChart
+                [data]="term.graphData"
+                [chartType]="pieChartType"
+                [colors]="pieChartColors"
+              >
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
